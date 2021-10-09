@@ -3,7 +3,7 @@ A program that lets you browse SkidrowReloaded and retrieves the download links 
 
 # Screenshots
 ![Screenshot1](https://github.com/ShutUpSkippy/SirDownload/blob/main/Images/SirDownload(1).png)
-![Screenshot2](https://github.com/ShutUpSkippy/SirDownload/blob/main/Images/SirDownload(1).png)
+![Screenshot2](https://github.com/ShutUpSkippy/SirDownload/blob/main/Images/SirDownload(2).png)
 
 # What's Working
 - Search for any game
