@@ -25,27 +25,20 @@ namespace SirDownload
             InitializeComponent();
         }
 
-        private void Search_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                Search(SearchBox.Text);
-                Keyboard.ClearFocus();
-            }
-        }
-
         public async void Search(string text, int page = -1, bool update = false)
         {
             ListItems.Clear();
             MainWindow.Instance.ShowLoad();
 
             //Get htmldoc
-            HtmlWeb web = new HtmlWeb();
+            HtmlWeb web = new();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             HtmlDocument htmlDoc;
 
+            //load first page
             if (page == -1)
                 htmlDoc = await web.LoadFromWebAsync($@"https://www.skidrowreloaded.com/?s={text}&x=0&y=0");
+            //load specific page
             else
                 htmlDoc = await web.LoadFromWebAsync($@"https://www.skidrowreloaded.com/page/{page}/?s={text}&x=0&y=0");
 
@@ -53,9 +46,6 @@ namespace SirDownload
             //add results
             foreach (QuickInfo s in await WebParser.GetTitles(htmlDoc))
                 ListItems.Add(new CustomListItem(s));
-
-            //used for getting button color
-            var converter = new System.Windows.Media.BrushConverter();
 
             //show number of pages
             if (update == false)
@@ -70,11 +60,8 @@ namespace SirDownload
             MainWindow.Instance.HideLoad();
         }
 
-        private void Search_Click(object sender, MouseButtonEventArgs e)
-        {
-            Search(SearchBox.Text);
-        }
 
+        #region Pages Navigation
         private void PageUp(object sender, MouseButtonEventArgs e)
         {
             CurrentPage++;
@@ -87,6 +74,9 @@ namespace SirDownload
             UpdatePage();
         }
 
+        /// <summary>
+        /// Verifies the new page number and loads that page.
+        /// </summary>
         private void UpdatePage()
         {
             CurrentPage = Math.Clamp(CurrentPage, 1, TotalPages);
@@ -97,18 +87,32 @@ namespace SirDownload
                 Search(SearchBox.Text, CurrentPage, true);
             }
         }
+        #endregion
+
+        #region Page Events
+        private void Search_Click(object sender, MouseButtonEventArgs e)
+            => Search(SearchBox.Text);
+
+        private void Search_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Search(SearchBox.Text);
+                Keyboard.ClearFocus();
+            }
+        }
 
         private void PageBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                int result = 1;
-                if (int.TryParse(PageBox.Text.Trim(), out result))
+                if (int.TryParse(PageBox.Text.Trim(), out int result))
                     CurrentPage = result;
 
                 UpdatePage();
                 Keyboard.ClearFocus();
             }
         }
+        #endregion
     }
 }

@@ -24,7 +24,7 @@ namespace SirDownload
 
         private async void GetData(string url, string cover)
         {
-            HtmlWeb web = new HtmlWeb();
+            HtmlWeb web = new();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var htmlDoc = await web.LoadFromWebAsync(url);
 
@@ -36,7 +36,7 @@ namespace SirDownload
         {
             await Task.Run(() =>
             {
-                FullInfo info = new FullInfo(htmlDoc, cover);
+                FullInfo info = new(htmlDoc, cover);
 
                 Dispatcher.InvokeAsync(() =>
                 {
@@ -61,6 +61,8 @@ namespace SirDownload
             }
         }
 
+
+        #region Page Events
         private void Back_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             MainWindow.Instance.ShowListPage();
@@ -70,7 +72,7 @@ namespace SirDownload
         {
             DownloadItem item = (DownloadItem)sender;
 
-            ProcessStartInfo info = new ProcessStartInfo();
+            ProcessStartInfo info = new();
             info.FileName = "cmd";
             info.Arguments = "/c start " + item.DownloadLink;
             info.CreateNoWindow = true;
@@ -78,5 +80,6 @@ namespace SirDownload
 
             Process.Start(info);
         }
+        #endregion
     }
 }

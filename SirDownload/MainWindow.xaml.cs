@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
@@ -12,6 +11,9 @@ namespace SirDownload
     {
         public static MainWindow Instance;
         private ListPage LastListPage = null;
+
+
+        #region Window
         public MainWindow()
         {
             InitializeComponent();
@@ -19,28 +21,22 @@ namespace SirDownload
             Instance = this;
         }
 
-        #region Window Movement
         private void TitleBarMouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 if (TitleLabel.IsMouseOver)
                     DragMove();
         }
+
+        private void Close_Click(object sender, MouseButtonEventArgs e) => Close();
         #endregion
 
-        private void Close_Click(object sender, MouseButtonEventArgs e)
-        {
-            Close();
-        }
-
+        #region Navigation 
         public async void ShowViewPage(string title, string url, string cover)
         {
-            await Task.Run(() =>
+            await Dispatcher.InvokeAsync(() =>
             {
-                Dispatcher.InvokeAsync(() =>
-                {
-                    MainFrame.Navigate(new ViewPage(title, url, cover));
-                });
+                MainFrame.Navigate(new ViewPage(title, url, cover));
             });
         }
 
@@ -55,6 +51,9 @@ namespace SirDownload
             }
         }
 
+        /// <summary>
+        /// Clears the MainFrame from previous pages.
+        /// </summary>
         public void ClearHistory()
         {
             if (!this.MainFrame.CanGoBack && !this.MainFrame.CanGoForward)
@@ -70,15 +69,14 @@ namespace SirDownload
 
             this.MainFrame.Navigate(new PageFunction<string>() { RemoveFromJournal = true });
         }
+        #endregion
 
+        #region Loading Screen
         public void ShowLoad()
-        {
-            LoadingGrid.Visibility = Visibility.Visible;
-        }
+           => LoadingGrid.Visibility = Visibility.Visible;
 
         public void HideLoad()
-        {
-            LoadingGrid.Visibility = Visibility.Hidden;
-        }
+           => LoadingGrid.Visibility = Visibility.Hidden;
+        #endregion
     }
 }

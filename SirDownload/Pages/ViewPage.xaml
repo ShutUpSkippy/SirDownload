@@ -15,7 +15,7 @@
                     Margin="10"
                     MouseDown="Back_Click">
                 <Image Grid.Row="0"
-                               Source="Images/Back.png"
+                               Source="/Images/Back.png"
                                Margin="5"/>
                 <Border.Style>
                     <Style TargetType="Border">
@@ -55,7 +55,7 @@
                         <Grid>
                             <Image Name="CoverImage"
                                        Stretch="UniformToFill"
-                                       Source="Images/SirDownload.png"     
+                                       Source="/Images/SirDownload.png"     
                                        VerticalAlignment="Top"/> <!--MaxHeight="500"-->
                             <Grid.OpacityMask>
                                 <VisualBrush Visual="{Binding ElementName=Mask}"/>

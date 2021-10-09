@@ -91,7 +91,7 @@
                         <Image Width="30"
                                Height="30"
                                VerticalAlignment="Center"
-                               Source="Images/Search.png"/>
+                               Source="/Images/Search.png"/>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Style.Setters>
@@ -120,7 +120,7 @@
                             MouseDown="PageDown"
                             Width="30"
                             Height="30">
-                        <Image Source="Images/Left.png"/>
+                        <Image Source="/Images/Left.png"/>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Setter Property="Background" Value="#262b38"/>
@@ -152,7 +152,7 @@
                             MouseDown="PageUp"
                             Width="30"
                             Height="30">
-                        <Image Source="Images/Right.png"/>
+                        <Image Source="/Images/Right.png"/>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Setter Property="Background" Value="#262b38"/>
@@ -173,33 +173,6 @@
         </Border>
     </Grid>
     <Page.Resources>
-        <Style TargetType="{x:Type Button}"
-               BasedOn="{StaticResource {x:Type Button}}">
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                CornerRadius="15"
-                                Height="40"
-                                Width="120"
-                                Margin="10,0,0,0">
-                            <Label Content="{TemplateBinding Content}"
-                                   Foreground="LightGray"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="14"
-                                   Name="CustomLabel"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#1c2230"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
         <Style TargetType="ListView">
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
