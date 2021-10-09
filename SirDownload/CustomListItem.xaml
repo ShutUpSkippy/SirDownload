@@ -35,7 +35,7 @@
                    Name="CoverImage"
                    MinHeight="100"
                    MinWidth="100"
-                   Source="SirDownload.png"/>
+                   Source="Images/SirDownload.png"/>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>

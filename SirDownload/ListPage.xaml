@@ -91,7 +91,7 @@
                         <Image Width="30"
                                Height="30"
                                VerticalAlignment="Center"
-                               Source="Search.png"/>
+                               Source="Images/Search.png"/>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Style.Setters>
@@ -120,7 +120,7 @@
                             MouseDown="PageDown"
                             Width="30"
                             Height="30">
-                        <Image Source="Left.png"/>
+                        <Image Source="Images/Left.png"/>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Setter Property="Background" Value="#262b38"/>
@@ -152,7 +152,7 @@
                             MouseDown="PageUp"
                             Width="30"
                             Height="30">
-                        <Image Source="Right.png"/>
+                        <Image Source="Images/Right.png"/>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Setter Property="Background" Value="#262b38"/>

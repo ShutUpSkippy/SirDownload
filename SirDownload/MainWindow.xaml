@@ -41,7 +41,7 @@
                         Height="20"
                         HorizontalAlignment="Right"
                         MouseDown="Close_Click">
-                    <Image Source="Close.png"/>
+                    <Image Source="Images/Close.png"/>
                     <Border.Style>
                         <Style TargetType="Border">
                             <Style.Setters>
@@ -78,7 +78,7 @@
 
             <Image Width="50"
                    Height="50"
-                   Source="Load.png">
+                   Source="Images/Load.png">
                 <Image.RenderTransform>
                     <RotateTransform x:Name="LoadImage" 
                                      Angle="0"

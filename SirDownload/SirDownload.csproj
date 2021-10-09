@@ -21,13 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Back.png" />
-    <Resource Include="Close.png" />
-    <Resource Include="Left.png" />
-    <Resource Include="Load.png" />
-    <Resource Include="Right.png" />
-    <Resource Include="Search.png" />
-    <Resource Include="SirDownload.png" />
+    <Resource Include="Images\Back.png" />
+    <Resource Include="Images\Close.png" />
+    <Resource Include="Images\Left.png" />
+    <Resource Include="Images\Load.png" />
+    <Resource Include="Images\Right.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\SirDownload.png" />
   </ItemGroup>
 
 </Project>
