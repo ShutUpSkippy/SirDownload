@@ -1,2 +1,0 @@
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.pdb
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.exe

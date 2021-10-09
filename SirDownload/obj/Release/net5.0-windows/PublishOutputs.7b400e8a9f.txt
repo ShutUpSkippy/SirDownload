@@ -1,6 +1,0 @@
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.exe
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.dll
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.deps.json
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.runtimeconfig.json
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\SirDownload.pdb
-C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\net5.0-windows\publish\HtmlAgilityPack.dll
