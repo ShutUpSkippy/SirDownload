@@ -1,0 +1,2 @@
+C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\publish\SirDownload.pdb
+C:\Users\simon\source\repos\SirDownload\SirDownload\bin\Release\publish\SirDownload.exe
